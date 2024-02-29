@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&L | Cursor Moving Color Changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+    <main>
+        <h1></h1>
+        <p>Cursor Moving Color Changer</p>
+    </main>
+    <footer></footer>
+</body>
+<script src="./script.js"></script>
+<script>
+    // console.log(document.querySelector("html"));
+    const html = document.querySelector("html");
+
+    function randomColorGenerator() {
+        // console.log("random color generator.");
+        const hexNumber = "0123456789abcdedf";
+        let hexCode = "#";
+
+        for (let index = 0; index < 6; index++) {
+            // console.log(index);
+            hexCode += hexNumber[Math.floor((Math.random() * 16))];
+        };
+
+        // return randomColor = Math.floor((Math.random() * 16)); 
+        // return randomColor = Math.floor((Math.random() + 1) * 100000);
+        return hexCode;
+    };
+
+    function mouseMovingColorChange() {
+        // console.log("mouse moving event.");
+
+        const randomColor = randomColorGenerator();
+        // console.log(randomColor);
+        html.style.backgroundColor = `${randomColor}`;
+    };
+
+    html.addEventListener("mousemove", () => mouseMovingColorChange());
+</script>
+
+</html>
