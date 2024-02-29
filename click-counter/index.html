@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&L | Counter</title>
+    <link rel="stylesheet" href="style.css">
+    <style></style>
+</head>
+
+<body>
+    <header></header>
+    <nav></nav>
+    <main>
+        <h1></h1>
+        <p>Click Counter</p>
+        <p><span id="minus-button">-</span> [<span id="display-counter">0</span>] <span id="plus-button">+</span></p>
+
+    </main>
+    <footer></footer>
+</body>
+<script src="./script.js"></script>
+<script>
+    // console.log("Counter");
+    const displayCounter = document.querySelector("#display-counter");
+    const minusButton = document.querySelector("#minus-button");
+    const plusButton = document.querySelector("#plus-button");
+    // console.log(displayCounter, minusButton, plusButton);
+
+    /*     
+    innerText: rendered text - non rendered text - html tage | string
+    textContect: rendered text + nonrendered text - html tages | 
+    innerHTML: rendered text + nonrendered text + html tages | 
+    */
+    function updateDisplayCounter(value) {
+        // console.log(value);
+
+        const displayCounterStr = displayCounter.innerText;
+        preDisplayCounterNum = parseInt(displayCounterStr);
+        // console.log(preDisplayCounterNum);
+
+        updatedDisplayCounter = preDisplayCounterNum + value;
+        displayCounter.innerText = `${updatedDisplayCounter}`;
+    }
+
+    plusButton.addEventListener("click", () => updateDisplayCounter(+1));
+
+    minusButton.addEventListener("click", () => updateDisplayCounter(-1));
+
+</script>
+
+</html>
